@@ -1,0 +1,101 @@
+1.
+
+public class Homework4_1 {
+
+    // 1 уровень сложности: 1 Создайте две переменные isWeekend и isRain. Дайте
+    // им свои произвольные значения. Создайте переменную canWalk, значение которой
+    // должно быть истинным, если это выходной день (isWeekend=true) и не идет дождь
+    // (isRain=false).
+
+    public static void main(String[] args) {
+        boolean isWeekend = true;
+        boolean isRain = false;
+        boolean canWalk = isWeekend && !isRain;
+        System.out.println("Я могу гулять: " + canWalk);
+
+    }
+}
+C:\Users\milao\.jdks\openjdk-20.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\lib\idea_rt.jar=62909:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\milao\IdeaProjects\Java\JavaBasisCourse220823m\out\production\JavaBasisCourse220823m homework4.Homework4_1
+Я могу гулять: true
+
+Process finished with exit code 0
+
+2.
+
+public class Homework4_2 {
+    //2 Создайте две переменные isEdekaOpen и isReweOpen, значения которых зависят от
+    // того, открыты магазины или нет (значения задайте сами). Реализуйте логический
+    // метод canBuy, возвращающий true / false Значение этой переменной должно быть
+    // true, если хотя бы один магазин открыт, иначе false. Отобразите строку «Я могу
+    // купить еду, это ……» и значение.
+
+    public static void main(String[] args) {
+        boolean isEdekaOpen = true;
+        boolean isReweOpen = false;
+        boolean canBuy = isEdekaOpen || isReweOpen;
+        System.out.println("Я могу купить еду: " + canBuy);
+
+    }
+}
+C:\Users\milao\.jdks\openjdk-20.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\lib\idea_rt.jar=62913:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\milao\IdeaProjects\Java\JavaBasisCourse220823m\out\production\JavaBasisCourse220823m homework4.Homework4_2
+Я могу купить еду: true
+
+Process finished with exit code 0
+
+3.
+
+public class Homework4_3 {
+    //3 Представим, что у нас есть устройство, в котором две колбы. Прибор работает
+    // корректно, если температура первой колбы выше 100 градусов, а температура второй
+    // колбы меньше 100 градусов. Вы должны написать метод, который проверяет это
+    // устройство. Ваша программа должна иметь переменные Temperature1 и Temperature2.
+    // В результате он выводит сообщение true или false.
+    public static void main(String[] args) {
+
+        double temperature1 = 120.5;
+        double temperature2 = 90.2;
+        boolean isDeviceWorking = temperature1 > 100 && temperature2 < 100;
+        System.out.println("Устройство работает: " + isDeviceWorking);
+
+    }
+}
+C:\Users\milao\.jdks\openjdk-20.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\lib\idea_rt.jar=62916:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\milao\IdeaProjects\Java\JavaBasisCourse220823m\out\production\JavaBasisCourse220823m homework4.Homework4_3
+Устройство работает: true
+
+Process finished with exit code 0
+
+4.
+
+public class Homework4_5 {
+    //** Напишите программу, которая вычисляет, сколько лишних калорий будет, если вместо
+    // пиццы диаметром 24 см вы купите пиццу диаметром 28 см. Чтобы решить эту проблему,
+    // предположим, что каждый квадратный сантиметр пиццы содержит 40 калорий.
+
+    public static void main(String[] args) {
+        int smallDiameter = 24;
+        int bigDiameter = 28;
+        int caloriesPerSquare = 40;
+        int additionalCalories = calorieCalculator(smallDiameter, bigDiameter, caloriesPerSquare);
+        System.out.println("При покупке большей пиццы в " + bigDiameter + " см вместо меньшей в " + smallDiameter
+                + " см вы получите дополнительно " + additionalCalories + " калорий.");
+    }
+
+    public static int calorieCalculator(int smallDiameter, int bigDiameter, int caloriesPerSquare) {
+
+        double smallArea = Math.PI * Math.pow(smallDiameter / 2.0, 2);
+        double bigArea = Math.PI * Math.pow(bigDiameter / 2.0, 2);
+
+        int smallCalories = (int) (smallArea * caloriesPerSquare);
+        int bigCalories = (int) (bigArea * caloriesPerSquare);
+
+        int additionalCalories = bigCalories - smallCalories;
+
+        return additionalCalories;
+    }
+
+}
+
+C:\Users\milao\.jdks\openjdk-20.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\lib\idea_rt.jar=62919:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\milao\IdeaProjects\Java\JavaBasisCourse220823m\out\production\JavaBasisCourse220823m homework4.Homework4_5
+При покупке большей пиццы в 28 см вместо меньшей в 24 см вы получите дополнительно 6535 калорий.
+
+Process finished with exit code 0
